@@ -1,9 +1,8 @@
 package com.vhugs.Models;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.persistence.*;
 import java.util.Collection;
 import java.util.List;
 
@@ -48,14 +47,25 @@ public class Post {
         return replies;
     }
 
-    public void setReplies(Collection<Reply> replies) {
-        this.replies = replies;
+    public void addRepliesToPost(Reply reply) {
+        replies.add(reply);
+    }
+
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
     public String toString() {
         return "Post{" +
-                "subject='" + subject + '\'' +
+                "id=" + id +
+                ", subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
                 ", replies=" + replies +
                 '}';
