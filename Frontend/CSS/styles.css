@@ -8,7 +8,53 @@
     padding-bottom: 50px;
 }
 
+h4 {
+    margin-bottom: 0px;
+}
+
 #post{
     display: flex;
     justify-content: center;
+}
+
+#resources {
+    border: 1px solid #999;
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 300px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+#resources:hover {
+    background-color: #efefef;
+}
+
+#resources > ul {
+    display: none;
+    list-style: none;
+}
+
+#resources:hover > ul {
+    display: block;
+}
+
+#resources > ul ul {
+    /* margin-left: 1px; */
+    list-style: none;
+}
+
+#resources > ul a, #select > p {
+    display: block;
+    padding: 3px 8px 4px;
+    color: #333;
+    text-decoration: none;
+}
+
+#resources > ul a:hover {
+    background-color: #ddd;
+}
+
+#res-contacts {
+    margin-top: 80px;
 }
