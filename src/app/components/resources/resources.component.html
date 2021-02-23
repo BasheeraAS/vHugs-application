@@ -2,29 +2,18 @@
     <p>Choose a category</p>
     <div id="menu">
         <!-- <p>Resources</p> -->
-        <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Resources
-        </button>
+        </button> 
+        
         <ul>
-            <li><a href="#cr">Class-related</a></li>
-            <li><a href="#mh">Mental health</a>
-            <li><a href="#crime">Crime</a></li>
-            <ul>
-                <li><a href="#domint">Domestic/Interpersonal</a></li>
-                <li><a href="#sc">Scams</a></li>
-            </ul>
-            <li><a href="#unemp">Unemployment</a></li>
-            <li><a href="#fi">Food insecurity</a></li>
-            <li><a href="#si">Shelter insecurity</a></li>
-            <li><a href="#ci">Clothing insecurity</a></li>
-            <li><a href="#tech">Technology</a></li>
-            <li><a href="#fa">Financial</a></li>
-            <li><a href="#legal">Legal</a></li>
-            <li><a href="#tran">Transportation</a></li>
-            <li><a href="#cc">Child care</a></li>
-            <li><a href="#ec">Elder care</a></li>
-            <li><a href="#util">Utility</a></li>
-            <li><a href="#mr">Multiple resources</a></li>
+            <li><a [routerLink]="['/classRes']">Class-related</a></li>
+            <li><a [routerLink]="['/mhRes']">Mental health</a>
+            <li><a [routerLink]="['/financial']">Financial</a>
+            <li><a [routerLink]="['/crimeRes']">Crime</a></li>
+            <li><a [routerLink]="['/insecurity']" >Insecurity</a></li>
+            <li><a [routerLink]="['/tech']">Technology</a></li>
+            <li><a [routerLink]="['/transportation']">Misc. Assistance</a></li>
         </ul>
     </div>
     
