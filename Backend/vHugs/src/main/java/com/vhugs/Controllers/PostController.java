@@ -20,6 +20,21 @@ public class PostController {
 
     @PostMapping("/posts")
     public void addNewPost(@RequestBody Post newPost){
+        newPost.setHugs(0);
         postRepo.save(newPost);
+
+    }
+
+    @GetMapping("/{id}/post")
+    public Post getSinglePost(@PathVariable Long id){
+        return postRepo.findById(id).get();
+    }
+
+    @GetMapping("{id}/addHug")
+    public Iterable<Post> addHugToPost(@PathVariable Long id){
+       Post postToMod = postRepo.findById(id).get();
+       postToMod.addHug();
+       postRepo.save(postToMod);
+        return postRepo.findAll();
     }
 }

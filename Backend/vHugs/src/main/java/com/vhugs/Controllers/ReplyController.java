@@ -24,7 +24,7 @@ public class ReplyController {
     private PostRepository postRepository;
 
     @PatchMapping("/{id}/replies")
-    public Post addReply(@PathVariable Long id, @RequestBody Reply reply){
+    public Post addReply(@RequestBody Reply reply,@PathVariable Long id){
         return postService.addReplyToPost(reply,id);
 
     }

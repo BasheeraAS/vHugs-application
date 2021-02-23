@@ -14,6 +14,7 @@ public class Post {
 
     private String subject;
     private String body;
+    private Integer hugs;
 
     @ManyToMany
     private Collection<Reply> replies;
@@ -22,6 +23,7 @@ public class Post {
         this.subject = subject;
         this.body = body;
         this.replies = List.of(replies);
+        this.hugs = 0;
     }
 
     public Post() {
@@ -51,7 +53,16 @@ public class Post {
         replies.add(reply);
     }
 
+    public Integer getHugs() {
+        return hugs;
+    }
 
+    public void setHugs(Integer hug) {
+        this.hugs = hug;
+    }
+    public void addHug(){
+        this.hugs +=1;
+    }
 
     public Long getId() {
         return id;
@@ -64,9 +75,9 @@ public class Post {
     @Override
     public String toString() {
         return "Post{" +
-                "id=" + id +
-                ", subject='" + subject + '\'' +
+                "subject='" + subject + '\'' +
                 ", body='" + body + '\'' +
+                ", hugs=" + hugs +
                 ", replies=" + replies +
                 '}';
     }
