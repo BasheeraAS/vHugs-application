@@ -1,4 +1,3 @@
-<p>post works!</p>
 
 <div class="container">
 <div class="card" style="width: 55rem" *ngFor="let post of posts">
@@ -7,7 +6,8 @@
     
     <p class="card-text">{{post.body}}</p>
     <a class="card-link" (click)="goToSinglePost(post.id)">View Post</a>
-    <a class="card-link" (click)="addHug(post.id)">Hug:{{" " +post.hugs}}</a>
+    <a class="card-link" (click)="addHug(post.id)"><input type="image" src="assets/hug-emoji.png" alt="Hugs">{{" " +post.hugs}}</a>
+
     <!-- <button type="submit" class="btn btn-success" (click)="goToSinglePost(post.id)">View Post</button> -->
 </div>
 </div>
