@@ -14,6 +14,13 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { UploadComponent } from './components/upload/upload.component';
+import { ClassComponent } from './components/resources/class/class.component';
+import { MentalComponent } from './components/resources/mental/mental.component';
+import { CrimeComponent } from './components/resources/crime/crime.component';
+import { InsecurityComponent } from './components/resources/insecurity/insecurity.component';
+import { TechComponent } from './components/resources/tech/tech.component';
+import { FinancialComponent } from './components/resources/financial/financial.component';
+import { TransportationComponent } from './components/resources/transportation/transportation.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +33,14 @@ import { UploadComponent } from './components/upload/upload.component';
     LogoutComponent,
     ErrorComponent,
     ResourcesComponent,
-    UploadComponent
+    UploadComponent,
+    ClassComponent,
+    MentalComponent,
+    CrimeComponent,
+    InsecurityComponent,
+    TechComponent,
+    FinancialComponent,
+    TransportationComponent
   ],
   imports: [
     BrowserModule,

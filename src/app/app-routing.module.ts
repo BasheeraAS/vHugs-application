@@ -9,6 +9,13 @@ import {RouteGuardService} from './route-guard.service';
 import {ErrorComponent} from './components/error/error.component';
 import {ResourcesComponent} from './components/resources/resources.component';
 import { UploadComponent } from './components/upload/upload.component';
+import {ClassComponent} from './components/resources/class/class.component';
+import { MentalComponent } from './components/resources/mental/mental.component';
+import { InsecurityComponent } from './components/resources/insecurity/insecurity.component';
+import { TechComponent } from './components/resources/tech/tech.component';
+import { FinancialComponent } from './components/resources/financial/financial.component';
+import { TransportationComponent } from './components/resources/transportation/transportation.component';
+import { CrimeComponent } from './components/resources/crime/crime.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -24,7 +31,13 @@ const routes: Routes = [
   {path:"logout",component:LogoutComponent,canActivate:[RouteGuardService]},
   {path:"resource",component:ResourcesComponent,canActivate:[RouteGuardService]},
   {path:"upload",component:UploadComponent,canActivate:[RouteGuardService]},
-  
+  {path:"classRes",component:ClassComponent,canActivate:[RouteGuardService]},
+  {path:"mhRes",component:MentalComponent,canActivate:[RouteGuardService]},
+  {path:"crimeRes",component:CrimeComponent,canActivate:[RouteGuardService]},
+  {path:"insecurity",component:InsecurityComponent,canActivate:[RouteGuardService]},
+  {path:"tech",component:TechComponent,canActivate:[RouteGuardService]},
+  {path:"financial",component:FinancialComponent,canActivate:[RouteGuardService]},
+  {path:"transportation",component:TransportationComponent,canActivate:[RouteGuardService]},
 
 
   {path: '**', redirectTo:'login'}
