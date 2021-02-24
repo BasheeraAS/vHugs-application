@@ -4,7 +4,7 @@
     <h1>{{post.subject}}</h1>
     <h3>{{post.body}}</h3> 
 
-    <span>{{"Hugs: " + post.hugs}}</span>
+    <span><img src="assets/hug-emoji.png" alt="Hugs">{{" x " +post.hugs}}</span>
     <br>
     <span>replies:</span>
         <div *ngFor="let reply of replies">

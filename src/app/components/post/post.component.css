@@ -1,21 +1,57 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #F2E996;
+    border: 1px solid red;
+    max-width: 1400px;
+}
 
+.container > div .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid red;
+}
 
-.card{
-    padding: 10px;
-    margin: 20px;
+.card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px;
+    margin: 10px 10px;
     border-style: ridge;
     border-color:rgb(255, 218, 11);
     border-radius: 20px;
     border-width: 1px;
-    text-align: center;
-    background-color: beige;
+    background-color: #ADD8E8;
+    max-width: 400px;
+    border: 1px solid red;
 }
 
-a{
+.card-title {
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
+    border: 1px solid red;
+}
+
+.card-text {
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid red;
+}
+
+.card-link {
+    text-align: center;
+}
+
+a {
     cursor: pointer;
     color:red;
     max-width: 80px;
-    
+    text-align: center;
     border-radius: 3px;
-    border:white;
+    /* border:white; */
 }
