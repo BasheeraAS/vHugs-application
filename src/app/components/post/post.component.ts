@@ -10,7 +10,8 @@ import { postResults } from 'src/app/Models/postResults';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-posts:postResults;
+// posts:postResults;
+posts = [];
 
   constructor(public postService: PostService,private router:Router) { }
 
@@ -53,6 +54,8 @@ posts:postResults;
       (post:any) => {
       
         this.posts = post;
+        this.posts.reverse();
+        console.log(this.posts);
      
       }
     )
