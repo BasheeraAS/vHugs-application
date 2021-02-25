@@ -3,7 +3,6 @@
     flex-direction: column;
     justify-content: center;
     background-color: #F2E996;
-    border: 1px solid red;
     max-width: 1400px;
 }
 
@@ -11,7 +10,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: 1px solid red;
 }
 
 .card {
@@ -27,20 +25,17 @@
     border-width: 1px;
     background-color: #ADD8E8;
     max-width: 400px;
-    border: 1px solid red;
 }
 
 .card-title {
     font-size: 18px;
     justify-content: center;
     text-align: center;
-    border: 1px solid red;
 }
 
 .card-text {
     font-size: 16px;
     text-align: left;
-    border: 1px solid red;
 }
 
 .card-link {
