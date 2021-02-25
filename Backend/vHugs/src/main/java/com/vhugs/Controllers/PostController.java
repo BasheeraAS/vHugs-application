@@ -19,9 +19,10 @@ public class PostController {
     }
 
     @PostMapping("/posts")
-    public void addNewPost(@RequestBody Post newPost){
+    public Post addNewPost(@RequestBody Post newPost){
         newPost.setHugs(0);
         postRepo.save(newPost);
+        return newPost;
 
     }
 

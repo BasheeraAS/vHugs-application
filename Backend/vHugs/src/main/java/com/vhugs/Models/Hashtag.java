@@ -23,6 +23,10 @@ public class Hashtag {
   public Hashtag() {
   }
 
+  public void addPostToTag(Post post){
+    posts.add(post);
+  }
+
   public String getHashtag() {
     return hashtag;
   }
@@ -33,6 +37,14 @@ public class Hashtag {
 
   public Collection<Post> getPosts() {
     return posts;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 
   @Override

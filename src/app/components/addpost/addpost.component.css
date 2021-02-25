@@ -1,12 +1,4 @@
-.postHeader{
-    color:green;
-}
 
-.headerDiv{
-    display: flex;
-    justify-content: center;
-    padding-bottom: 50px;
-}
 
 
 
@@ -26,11 +18,19 @@ h4 {
     width: 300px;
     font-family: Arial, sans-serif;
     font-size: 14px; */
-    max-width: 275px;
+    max-width: 170px;
+   ;
 }
+
+.btn{
+    width: 170px;
+    
+}
+
 
 #menu:hover {
     background-color: #efefef;
+   
 }
 
 /* p #menu {
