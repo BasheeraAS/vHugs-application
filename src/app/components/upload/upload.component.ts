@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { UploadFileService } from 'src/app/services/upload-file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -27,7 +28,7 @@ export class UploadComponent implements OnInit {
     this.fileInfos = this.uploadService.getFiles();
   }
 
-  constructor(private uploadService: UploadFileService) { }
+  constructor(private uploadService: UploadFileService,private router:Router) { }
 
   selectFile(event) {
     this.selectedFiles = event.target.files;
@@ -63,6 +64,7 @@ export class UploadComponent implements OnInit {
       this.fileInfos = this.uploadService.getFiles();
     })
     
+    this.router.navigate(['test']);
     
   }
 

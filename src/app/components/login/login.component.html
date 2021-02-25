@@ -1,16 +1,29 @@
-<img src="assets/business-card.jpg"
-                 height="400"
-                 width="800"
-            />
-            <div class="container">
+
+<img src="assets/bestbannerofalltimethegreatestevermadeilovecheesecake.png"/>
+
+<div class="container">
             <div class="row align-items-center">
-                <div class="col-3">
+                <div class="col-4">
                 </div>
-                <div class="col-7">
-                    Username: <input type="text" name="username" [(ngModel)]="username">
-                    <button type="button" (click)="handleLogin()">Login</button>
+                <div class="col-4">
+                  <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h5 class="card-title">Login to vHugs</h5>
+                      <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
+                      <button type="button" class="btn btn-primary" (click)="handleLogin()" style="background-color:#003399">Login</button>
+                    </div>
+                  </div>
                 </div>
-                <div class="col-3">
+                <div class="col-4">
                 </div>
               </div>
             </div>
+
+
+            <!-- <div class="card" style="width: 18rem;">
+              <div class="card-body">
+                <h5 class="card-title">Login to vHugs</h5>
+                <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
+                <button type="button" (click)="handleLogin()">Login</button>
+              </div>
+            </div> -->

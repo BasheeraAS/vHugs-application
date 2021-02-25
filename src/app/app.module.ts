@@ -21,6 +21,7 @@ import { InsecurityComponent } from './components/resources/insecurity/insecurit
 import { TechComponent } from './components/resources/tech/tech.component';
 import { FinancialComponent } from './components/resources/financial/financial.component';
 import { TransportationComponent } from './components/resources/transportation/transportation.component';
+import { TestComponent } from './components/test/test.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TransportationComponent } from './components/resources/transportation/t
     InsecurityComponent,
     TechComponent,
     FinancialComponent,
-    TransportationComponent
+    TransportationComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
