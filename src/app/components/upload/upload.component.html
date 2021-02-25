@@ -31,10 +31,10 @@
         <div class="card-header">List of Files</div>
         <ul
           class="list-group list-group-flush"
-          *ngFor="let file of fileInfos | async"
-        >
+          *ngFor="let file of fileInfos | async">
           <li class="list-group-item">
             <a href="{{ file.url }}">{{ file.name }}</a> <span><button type ="submit" (click)="deleteFile(file.url)">x</button></span>
+            <img src="{{file.url}}" style="max-width:70px;max-height:70px;">
           </li>
         </ul>
       </div>

@@ -3,6 +3,7 @@ package com.vhugs.Models;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -19,11 +20,14 @@ public class Post {
     @ManyToMany
     private Collection<Reply> replies;
 
+
+
     public Post(String subject, String body,Reply...replies) {
         this.subject = subject;
         this.body = body;
         this.replies = List.of(replies);
         this.hugs = 0;
+
     }
 
     public Post() {
@@ -57,7 +61,9 @@ public class Post {
         return hugs;
     }
 
-    public void setHugs(Integer hug) {
+
+
+  public void setHugs(Integer hug) {
         this.hugs = hug;
     }
     public void addHug(){
@@ -72,15 +78,16 @@ public class Post {
         this.id = id;
     }
 
-    @Override
-    public String toString() {
-        return "Post{" +
-                "subject='" + subject + '\'' +
-                ", body='" + body + '\'' +
-                ", hugs=" + hugs +
-                ", replies=" + replies +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Post{" +
+      "id=" + id +
+      ", subject='" + subject + '\'' +
+      ", body='" + body + '\'' +
+      ", hugs=" + hugs +
+      ", replies=" + replies +
+      '}';
+  }
 
     @Override
     public boolean equals(Object o) {

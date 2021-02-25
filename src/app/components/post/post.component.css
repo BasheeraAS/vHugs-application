@@ -1,21 +1,52 @@
-
-
-.card{
-    padding: 10px;
-    margin: 20px;
-    border-style: ridge;
-    border-color:rgb(255, 218, 11);
-    border-radius: 20px;
-    border-width: 1px;
-    text-align: center;
-    background-color: beige;
+.container {
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    background-color:  #CCFFFF;
+    max-width: 2000px;
 }
 
-a{
+.container > div .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0px;
+    margin: 10px 10px;
+    border-style: ridge;
+    border-color:navy;
+    border-radius: 20px;
+    border-width: 3px;
+    background-color: white;
+    max-width: 500px;
+}
+
+.card-title {
+    font-size: 18px;
+    justify-content: center;
+    text-align: center;
+}
+
+.card-text {
+    font-size: 16px;
+    text-align: left;
+}
+
+.card-link {
+    text-align: center;
+}
+
+a {
     cursor: pointer;
     color:red;
     max-width: 80px;
-    
+    text-align: center;
     border-radius: 3px;
-    border:white;
+    /* border:white; */
 }
