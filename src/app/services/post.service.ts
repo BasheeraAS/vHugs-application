@@ -28,7 +28,7 @@ export class PostService {
     return<postResults> this.singlePost;
   }
 
-  addPost(post){
+  addPost(post):any{
     return this.http.post(`http://localhost:8080/posts`,post);
   }
 
@@ -41,5 +41,9 @@ export class PostService {
 
   addHug(id){
       return this.http.get(`http://localhost:8080/${id}/addHug`)
+  }
+
+  addHashtagToPost(tagId,postId){
+    return this.http.post(`http://localhost:8080/addHashtag/${tagId}`,postId);
   }
 }

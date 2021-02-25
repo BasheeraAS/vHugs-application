@@ -21,6 +21,10 @@ subject:string;
 body:string;
 myPost:post;
 myHashtags:any;
+showTags = {} as any;
+tagId:number;
+shouldDisplayHashtag = false;
+
   constructor(public postService:PostService,private router:Router,private hashtagService:HashtagService) { }
 
   ngOnInit(): void {
@@ -33,11 +37,25 @@ myHashtags:any;
   addPost(){
     
     this.myPost = new post(this.subject,this.body);
-    console.log(this.myPost)
+    
     this.postService.addPost(this.myPost).subscribe(data=>{
-      console.log(data);
-      this.router.navigate(['post'])
+      console.log(data.id);
+      if(this.shouldDisplayHashtag){
+        console.log('adding hashtag')
+        this.postService.addHashtagToPost(this.tagId,data.id).subscribe(tagData=>{
+          console.log(tagData);
+        })
+         
+      }
+      // this.router.navigate(['post'])
     })
    
+  }
+
+  addTagToPost(id,tag){
+    this.shouldDisplayHashtag = true;
+    this.showTags = tag;
+    this.tagId = id;
+    console.log(id);
   }
 }

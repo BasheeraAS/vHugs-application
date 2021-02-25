@@ -22,6 +22,7 @@ import { TechComponent } from './components/resources/tech/tech.component';
 import { FinancialComponent } from './components/resources/financial/financial.component';
 import { TransportationComponent } from './components/resources/transportation/transportation.component';
 import { TestComponent } from './components/test/test.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { TestComponent } from './components/test/test.component';
     TechComponent,
     FinancialComponent,
     TransportationComponent,
-    TestComponent
+    TestComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
