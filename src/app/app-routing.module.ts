@@ -16,6 +16,7 @@ import { TechComponent } from './components/resources/tech/tech.component';
 import { FinancialComponent } from './components/resources/financial/financial.component';
 import { TransportationComponent } from './components/resources/transportation/transportation.component';
 import { CrimeComponent } from './components/resources/crime/crime.component';
+import {TestComponent} from '../app/components/test/test.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -38,6 +39,7 @@ const routes: Routes = [
   {path:"tech",component:TechComponent,canActivate:[RouteGuardService]},
   {path:"financial",component:FinancialComponent,canActivate:[RouteGuardService]},
   {path:"transportation",component:TransportationComponent,canActivate:[RouteGuardService]},
+  {path:"test",component:TestComponent,canActivate:[RouteGuardService]},
 
 
   {path: '**', redirectTo:'login'}

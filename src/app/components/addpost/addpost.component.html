@@ -4,9 +4,23 @@
 <input type="text" name="subject" [(ngModel)]="subject" placeholder="Subject">
 <input type="text" name="body" [(ngModel)]="body" placeholder="Body">
 <button type="submit"(click)="addPost()">Add Post</button>
+</div> -->
 
 
 
+
+  
+
+
+
+<div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Subject</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Subject" [(ngModel)]="subject">
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label">Post</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="body"></textarea>
+  </div>
 
   <div id="menu">
     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,14 +30,3 @@
        <li *ngFor="let tag of myHashtags"><a [routerLink]="['/classRes']">{{tag.hashtag}}</a></li>
    </ul>
 </div>
-</div> -->
-
-
-<div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
