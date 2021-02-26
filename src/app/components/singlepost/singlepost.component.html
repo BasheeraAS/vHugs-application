@@ -6,6 +6,7 @@
     <h3>{{post.body}}</h3> 
 
     <span>{{"Hugs: " + post.hugs}}</span>
+    <p *ngFor="let tag of hashtag">{{tag.hashtag}}</p>
     <br>
     <span>replies:</span>
         <div *ngFor="let reply of replies">

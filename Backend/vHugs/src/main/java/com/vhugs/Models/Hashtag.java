@@ -52,7 +52,6 @@ public class Hashtag {
     return "Hashtag{" +
       "hashtag='" + hashtag + '\'' +
       ", id=" + id +
-      ", posts=" + posts +
       '}';
   }
 

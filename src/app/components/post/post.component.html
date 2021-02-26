@@ -1,3 +1,4 @@
+ <html>
  <div class="container">
 
     <div class="row">
@@ -5,7 +6,7 @@
           
         </div>
         <div class="col-sm">
-            <div class="card" style="width: 60rem" *ngFor="let post of posts">
+            <div class="card" style="width: 70rem"  *ngFor="let post of posts">
                 <div class="card-body">
                 <h1 class="card-title" style="font-size: 20px;"><strong>{{post.subject}}</strong></h1>
                 
@@ -21,41 +22,17 @@
         </div>
       </div>
 </div>
+</html>
 
 
-
-<!-- <div class="container">
-    <div class="row align-items-start">
-      <div class="col">
-        One of three columns x
-      </div>
-      <div class="col">
-        One of three columns y 
-      </div>
-      <div class="col">
-        One of three columns z
-      </div>
-    </div>
-    <div class="row align-items-center">
-      <div class="col">
-        One of three columns a 
-      </div>
-      <div class="col">
-        One of three columns b 
-      </div>
-      <div class="col">
-        One of three columns c
-      </div>
-    </div>
-    <div class="row align-items-end">
-      <div class="col">
-        One of three columns 1 
-      </div>
-      <div class="col">
-        One of three columns 2 
-      </div>
-      <div class="col">
-        One of three columns 3
-      </div>
-    </div>
+<!-- <div class="col">
+<div class="card" style="width: 60rem" *ngFor="let post of posts">
+    <div class="card-body">
+    <h1 class="card-title" style="font-size: 20px;"><strong>{{post.subject}}</strong></h1>
+    
+    <p class="card-text">{{post.body}}</p>
+    <a class="card-link" (click)="goToSinglePost(post.id)" style="color: navy;">View Post</a>
+    <a class="card-link" (click)="addHug(post.id)" style="color: navy;"><input type="image" src="assets/hug-emoji.png" alt="Hugs" >{{" x " +post.hugs}}</a>
+</div>
+</div>
 </div> -->

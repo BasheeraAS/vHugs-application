@@ -15,11 +15,11 @@
 <div class="container">
 <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Subject</label>
-    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Subject" [(ngModel)]="subject">
+    <input style="max-width: 250px;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="Subject" [(ngModel)]="subject">
   </div>
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Post</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="body"></textarea>
+    <textarea style="max-width: 600px;" class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="body"></textarea>
   </div>
   <p *ngIf="shouldDisplayHashtag">{{showTags}}</p>
 </div>
