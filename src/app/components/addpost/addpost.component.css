@@ -1,7 +1,38 @@
+html{
+    background-color:  #CCFFFF;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: repeat;
+  object-position: 100%;
+ 
+ 
+  
+
+}
+
+li{
+    cursor: pointer;
+}
 
 
+.container{
+    padding-top: 200px;
+    overflow:hidden;
+}
 
-
+.card{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5px;
+    margin: 10px 10px;
+    border-style: ridge;
+    border-color:navy;
+    border-radius: 20px;
+    border-width: 3px;
+    background-color: white;
+}
 h4 {
     margin-bottom: 0px;
 }
@@ -18,11 +49,14 @@ h4 {
     width: 300px;
     font-family: Arial, sans-serif;
     font-size: 14px; */
-    max-width: 170px;
-   ;
+    max-width: 175px;
+   padding-top: 10px;
+   margin-left: 200px;
+   
 }
 
 .btn{
+    margin-left: 15px;
     width: 170px;
     
 }

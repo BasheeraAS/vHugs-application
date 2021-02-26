@@ -4,6 +4,7 @@ import { postResults } from 'src/app/Models/postResults';
 import { PostService } from 'src/app/services/post.service';
 import {ReplyService} from '../../services/reply.service';
 import {replyData} from '../../Models/reply';
+import { HashtagService } from 'src/app/services/hashtag.service';
 
 export class Reply{
   constructor(
@@ -24,21 +25,22 @@ replies = {};
 replyText:string;
 id:number;
 reply: Reply;
-  constructor(public postService:PostService,public replyService:ReplyService) { }
+hashtag:any;
+  constructor(public postService:PostService,public replyService:ReplyService,public HashtagService:HashtagService) { }
 
   ngOnInit(): void {
     this.id = this.postService.getId();
     this.postService.getSinglePost(this.id).subscribe((singlePost =>{
       this.singlePostData = singlePost;
       this.myArray.push(this.singlePostData);
-      
+      console.log(this.singlePostData);
     }))
     this.replyService.getAllRepliesPerPost(this.id).subscribe(reply =>{
-      
-      console.log(reply);
       this.replies = reply;
-      console.log(this.replies)
+      
     })
+
+    this.getHashtag();
     
   }
 
@@ -57,6 +59,13 @@ reply: Reply;
       console.log(reply);
       this.replies = reply;
       console.log(this.replies)
+    })
+  }
+
+  getHashtag(){
+    this.HashtagService.getPostHashtag(this.id).subscribe(response =>{
+      this.hashtag = response;
+      console.log(response);
     })
   }
 

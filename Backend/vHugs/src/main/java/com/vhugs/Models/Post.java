@@ -1,6 +1,7 @@
 package com.vhugs.Models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -20,6 +21,8 @@ public class Post {
     @ManyToMany
     private Collection<Reply> replies;
 
+  @ManyToMany(mappedBy = "posts")
+  private Collection<Hashtag> hashtags;
 
 
     public Post(String subject, String body,Reply...replies) {
@@ -61,7 +64,9 @@ public class Post {
         return hugs;
     }
 
-
+  public Collection<Hashtag> retrieveHashtags() {
+    return hashtags;
+  }
 
   public void setHugs(Integer hug) {
         this.hugs = hug;
@@ -78,6 +83,7 @@ public class Post {
         this.id = id;
     }
 
+
   @Override
   public String toString() {
     return "Post{" +
@@ -89,25 +95,29 @@ public class Post {
       '}';
   }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
 
-        Post post = (Post) o;
+    Post post = (Post) o;
 
-        if (id != null ? !id.equals(post.id) : post.id != null) return false;
-        if (subject != null ? !subject.equals(post.subject) : post.subject != null) return false;
-        if (body != null ? !body.equals(post.body) : post.body != null) return false;
-        return replies != null ? replies.equals(post.replies) : post.replies == null;
-    }
+    if (id != null ? !id.equals(post.id) : post.id != null) return false;
+    if (subject != null ? !subject.equals(post.subject) : post.subject != null) return false;
+    if (body != null ? !body.equals(post.body) : post.body != null) return false;
+    if (hugs != null ? !hugs.equals(post.hugs) : post.hugs != null) return false;
+    if (replies != null ? !replies.equals(post.replies) : post.replies != null) return false;
+    return hashtags != null ? hashtags.equals(post.hashtags) : post.hashtags == null;
+  }
 
-    @Override
-    public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (subject != null ? subject.hashCode() : 0);
-        result = 31 * result + (body != null ? body.hashCode() : 0);
-        result = 31 * result + (replies != null ? replies.hashCode() : 0);
-        return result;
-    }
+  @Override
+  public int hashCode() {
+    int result = id != null ? id.hashCode() : 0;
+    result = 31 * result + (subject != null ? subject.hashCode() : 0);
+    result = 31 * result + (body != null ? body.hashCode() : 0);
+    result = 31 * result + (hugs != null ? hugs.hashCode() : 0);
+    result = 31 * result + (replies != null ? replies.hashCode() : 0);
+    result = 31 * result + (hashtags != null ? hashtags.hashCode() : 0);
+    return result;
+  }
 }

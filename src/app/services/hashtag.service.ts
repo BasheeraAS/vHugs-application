@@ -11,4 +11,8 @@ export class HashtagService {
   getAllHashtags(){
     return this.http.get(`http://localhost:8080/getHashtags`);
   }
+
+  getPostHashtag(id){
+    return this.http.get(`http://localhost:8080/getHashtag/${id}`)
+  }
 }
