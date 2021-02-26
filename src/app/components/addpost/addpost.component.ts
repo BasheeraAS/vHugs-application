@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import {HashtagService} from '../../services/hashtag.service';
 import {HashtagResponse} from '../../Models/HashtagResponse';
+declare var jquery:any;
 
 export class post{
   constructor(
@@ -24,6 +25,7 @@ myHashtags:any;
 showTags = {} as any;
 tagId:number;
 shouldDisplayHashtag = false;
+
 
   constructor(public postService:PostService,private router:Router,private hashtagService:HashtagService) { }
 
@@ -47,7 +49,7 @@ shouldDisplayHashtag = false;
         })
          
       }
-      // this.router.navigate(['post'])
+      this.router.navigate(['post'])
     })
    
   }
@@ -58,4 +60,5 @@ shouldDisplayHashtag = false;
     this.tagId = id;
     console.log(id);
   }
+
 }

@@ -44,6 +44,8 @@ export class PostService {
   }
 
   addHashtagToPost(tagId,postId){
-    return this.http.post(`http://localhost:8080/addHashtag/${tagId}`,postId);
+    return this.http.get(`http://localhost:8080/addHashtag/${tagId}/${postId}`);
   }
+
+  
 }
