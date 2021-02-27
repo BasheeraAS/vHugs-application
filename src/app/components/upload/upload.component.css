@@ -1,0 +1,23 @@
+html {
+    background-color:  #CCFFFF;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: repeat;
+    object-position: 100%;
+}
+
+.list-group-flush>.list-group-item {
+    display: flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.list-group-flush>.list-group-item>.x {
+    display: flex;
+    justify-content: left;
+    /* margin: 0px 5px 0px 0px; */
+}
+
+/* .space {
+   padding: 0px 50px 0px 50px;
+} */

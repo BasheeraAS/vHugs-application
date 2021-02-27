@@ -34,6 +34,8 @@ shouldDisplayHashtag = false;
       this.myHashtags = response;
       console.log(this.myHashtags);
     })
+    
+    
   }
 
   addPost(){
@@ -60,5 +62,7 @@ shouldDisplayHashtag = false;
     this.tagId = id;
     console.log(id);
   }
+
+
 
 }

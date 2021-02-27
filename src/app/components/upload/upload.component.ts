@@ -16,6 +16,7 @@ export class UploadComponent implements OnInit {
   progress = 0;
   message = '';
   title = 'vHugs'
+  displayMessage = false;
 
   fileInfos: Observable<any>;
 
@@ -35,6 +36,7 @@ export class UploadComponent implements OnInit {
   }
 
   upload() {
+    this.displayMessage = true;
     this.progress = 0;
   
     this.currentFile = this.selectedFiles.item(0);
@@ -52,6 +54,11 @@ export class UploadComponent implements OnInit {
         this.message = 'Could not upload the file!';
         this.currentFile = undefined;
       });
+  
+      setTimeout(()=>{                           
+        this.displayMessage = false;
+        this.progress = 0;
+   }, 3000);
   
     this.selectedFiles = undefined;
   }

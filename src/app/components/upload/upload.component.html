@@ -1,12 +1,12 @@
+<html>
 <div class="container" style="width:600px">
-    <div style="margin: 20px">
+    <div style="margin: 0px 0px 20px 0px">
       <h3 style="color: crimson;">vHugs Uploader</h3>
       <h4>{{ title }}</h4>
     </div>
   
     <div *ngIf="currentFile" class="progress">
-        <div
-          class="progress-bar progress-bar-info progress-bar-striped"
+        <div class="progress-bar progress-bar-info progress-bar-striped"
           role="progressbar"
           attr.aria-valuenow="{{ progress }}"
           aria-valuemin="0"
@@ -25,7 +25,7 @@
         Upload
       </button>
       
-      <div class="alert alert-light" role="alert">{{ message }}</div>
+      <div class="alert alert-light" role="alert" *ngIf="displayMessage">{{ message }}</div>
       
       <div class="card">
         <div class="card-header">List of Files</div>
@@ -33,9 +33,12 @@
           class="list-group list-group-flush"
           *ngFor="let file of fileInfos | async">
           <li class="list-group-item">
-            <a href="{{ file.url }}">{{ file.name }}</a> <span><button type ="submit" (click)="deleteFile(file.url)">x</button></span>
+            <div class="x">
+              <a href="{{ file.url }}">{{ file.name }}</a> <span><div class="space"></div><button type ="submit" (click)="deleteFile(file.url)">x</button></span>
+            </div>
             <img src="{{file.url}}" style="max-width:70px;max-height:70px;">
           </li>
         </ul>
       </div>
   </div>
+  </html>
