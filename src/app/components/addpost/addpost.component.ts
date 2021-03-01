@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PostService } from 'src/app/services/post.service';
 import {HashtagService} from '../../services/hashtag.service';
 import {HashtagResponse} from '../../Models/HashtagResponse';
+import { MentalComponent } from '../resources/mental/mental.component';
 declare var jquery:any;
 
 export class post{
@@ -25,6 +26,10 @@ myHashtags:HashtagResponse[] = [];
 displayedHashtag:HashtagResponse;
 tagId:number;
 shouldDisplayHashtag = false;
+keywords = [
+  {word: 'mental',
+   link:'http://www.google.com' }
+]
 
 
   constructor(public postService:PostService,private router:Router,private hashtagService:HashtagService) { }
@@ -51,6 +56,12 @@ shouldDisplayHashtag = false;
         })
          
       }
+
+      this.keywords.forEach(keyword =>{
+          if(this.body.includes(keyword.word)){
+            console.log(keyword.link)
+          }
+      })
       this.router.navigate(['post'])
     })
    
