@@ -17,13 +17,13 @@ html{
     padding-bottom: 40px;
 }
 
-.container > div .card {
+.container > div .cardMike {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.card {
+.cardMike {
     display: flex;
     text-align: center;
     justify-content: center;
@@ -35,7 +35,8 @@ html{
     border-radius: 20px;
     border-width: 3px;
     background-color: white;
-    max-width: 500px;
+    max-width: 350px;
+    height:185px;
 }
 
 .card-title {

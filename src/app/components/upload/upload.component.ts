@@ -3,38 +3,37 @@ import { UploadFileService } from 'src/app/services/upload-file.service';
 import { HttpEventType, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
-
+​
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
-
+​
   selectedFiles: FileList;
   currentFile: File;
   progress = 0;
   message = '';
   title = 'vHugs'
   displayMessage = false;
-
   fileInfos: Observable<any>;
-
+​
   ngOnInit() {
     this.fileInfos = this.uploadService.getFiles();
   
   }
-
+​
   getFiles(){
     this.fileInfos = this.uploadService.getFiles();
   }
-
+​
   constructor(private uploadService: UploadFileService,private router:Router) { }
-
+​
   selectFile(event) {
     this.selectedFiles = event.target.files;
   }
-
+​
   upload() {
     this.displayMessage = true;
     this.progress = 0;
@@ -56,13 +55,11 @@ export class UploadComponent implements OnInit {
       });
   
       setTimeout(()=>{                           
-        this.displayMessage = false;
-        this.progress = 0;
-   }, 3000);
+        this.displayMessage = false; this.progress = 0;}, 3000);
   
     this.selectedFiles = undefined;
   }
-
+​
   deleteFile(url){
     console.log(url)
     this.uploadService.deleteFile(url).subscribe(data=>{
@@ -74,6 +71,6 @@ export class UploadComponent implements OnInit {
     this.router.navigate(['test']);
     
   }
-
-
+​
+​
 }

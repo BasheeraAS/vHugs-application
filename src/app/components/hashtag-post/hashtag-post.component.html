@@ -1,0 +1,10 @@
+<h1>{{myPosts.hashtag}}</h1>
+
+
+<div class="container" *ngFor="let post of myPosts.posts">
+    <h1>{{post.subject}}</h1>
+    <h3>{{post.body}}</h3>
+
+    <span>replies:</span>
+    <p *ngFor="let replies of post.replies">{{replies.message}}</p>
+</div>

@@ -23,6 +23,8 @@ import { FinancialComponent } from './components/resources/financial/financial.c
 import { TransportationComponent } from './components/resources/transportation/transportation.component';
 import { TestComponent } from './components/test/test.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { HashtagComponent } from './components/hashtag/hashtag.component';
+import { HashtagPostComponent } from './components/hashtag-post/hashtag-post.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +46,9 @@ import { FooterComponent } from './components/footer/footer.component';
     FinancialComponent,
     TransportationComponent,
     TestComponent,
-    FooterComponent
+    FooterComponent,
+    HashtagComponent,
+    HashtagPostComponent
   ],
   imports: [
     BrowserModule,

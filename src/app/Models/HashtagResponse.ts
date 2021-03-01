@@ -1,4 +1,7 @@
+import { postResponse } from "./postResponse";
+
 export interface HashtagResponse{
     hashtag:string,
-    posts:[]
+    id:number,
+    posts:postResponse[]
 }

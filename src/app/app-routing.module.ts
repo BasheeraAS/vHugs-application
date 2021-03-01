@@ -17,6 +17,8 @@ import { FinancialComponent } from './components/resources/financial/financial.c
 import { TransportationComponent } from './components/resources/transportation/transportation.component';
 import { CrimeComponent } from './components/resources/crime/crime.component';
 import {TestComponent} from '../app/components/test/test.component';
+import{HashtagComponent} from './components/hashtag/hashtag.component';
+import {HashtagPostComponent} from './components/hashtag-post/hashtag-post.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -40,7 +42,8 @@ const routes: Routes = [
   {path:"financial",component:FinancialComponent,canActivate:[RouteGuardService]},
   {path:"transportation",component:TransportationComponent,canActivate:[RouteGuardService]},
   {path:"test",component:TestComponent,canActivate:[RouteGuardService]},
-
+  {path:"hashtags",component:HashtagComponent,canActivate:[RouteGuardService]},
+  {path:"hashtagpost",component:HashtagPostComponent,canActivate:[RouteGuardService]},
 
   {path: '**', redirectTo:'login'}
 ];

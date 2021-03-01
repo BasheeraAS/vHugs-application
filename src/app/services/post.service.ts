@@ -1,23 +1,23 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {postResponse} from '../Models/postResponse';
-import {postResults} from '../Models/postResults';
+
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
-  singlePost:postResults;
+  singlePost:postResponse;
   id:number;
   constructor(private http:HttpClient) { }
 
-  getAllPosts():Observable<postResults>{
-    return this.http.get<postResults>(`http://localhost:8080/posts`)
+  getAllPosts():Observable<postResponse[]>{
+    return this.http.get<postResponse[]>(`http://localhost:8080/posts`)
   }
 
-  getSinglePost(postId){
-    return this.http.get<postResults>(`http://localhost:8080/${postId}/post`)
+  getSinglePost(postId):Observable<postResponse>{
+    return this.http.get<postResponse>(`http://localhost:8080/${postId}/post`)
   }
 
   setSinglePost(post){
@@ -25,7 +25,7 @@ export class PostService {
   }
 
   getSinglePostData(){
-    return<postResults> this.singlePost;
+    return<postResponse> this.singlePost;
   }
 
   addPost(post):any{

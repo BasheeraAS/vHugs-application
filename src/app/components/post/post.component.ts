@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {PostService} from '../../services/post.service';
 import {postResponse} from '../../Models/postResponse';
-import { postResults } from 'src/app/Models/postResults';
+
 
 @Component({
   selector: 'app-post',
@@ -10,31 +10,18 @@ import { postResults } from 'src/app/Models/postResults';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
-// posts:postResults;
-posts = [];
+
+posts:postResponse[] = [];
 
   constructor(public postService: PostService,private router:Router) { }
 
   ngOnInit(): void {
-    // this.postService.getAllPosts().subscribe(
-    //   (post:any) => {
-      
-    //     this.posts = post;
-      
-    //   }
-    // )
+    
     this.getAllPosts();
   }
 
   goToSinglePost(id){
-    // this.postService.getSinglePost(id).subscribe(
-    //   (post:any) =>{
-       
-
-    //     this.postService.setSinglePost(post);
-        
-    //   }
-    // )
+  
     this.postService.setId(id);
     this.router.navigate(['singlepost']);
   }
@@ -51,9 +38,9 @@ posts = [];
 
   getAllPosts(){
     this.postService.getAllPosts().subscribe(
-      (post:any) => {
+      (posts:postResponse[]) => {
       
-        this.posts = post;
+        this.posts = posts;
         this.posts.reverse();
         console.log(this.posts);
      
