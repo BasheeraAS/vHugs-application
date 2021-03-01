@@ -25,7 +25,7 @@
 
         <ul class="navbar-nav navbar-collapse justify-content-end">
             
-           <li *ngIf="loginService.isUserLoggedIn" class="nav-link" style="color: #CCFFFF;">{{this.loginService.getUsername()}}</li>
+           <li *ngIf="loginService.isUserLoggedIn" class="nav-link" style="color: #CCFFFF;">Hello, {{this.loginService.getUsername()}}</li>
             <li *ngIf="loginService.isUserLoggedIn"><a routerLink="logout"><button type="submit" class="btn btn-outline-warning" style="color:white">Logout</button></a>
         </ul>
 </nav>
