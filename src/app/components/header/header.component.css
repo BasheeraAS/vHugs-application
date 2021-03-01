@@ -5,3 +5,7 @@ li{
 *{
     font-size: 22px;
 }
+
+.navbar-nav {
+    text-shadow: 1px 1px 5px white;
+}
