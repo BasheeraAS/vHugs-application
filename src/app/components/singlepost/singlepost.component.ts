@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { postResponse } from 'src/app/Models/postResponse';
-import { postResults } from 'src/app/Models/postResults';
 import { PostService } from 'src/app/services/post.service';
 import {ReplyService} from '../../services/reply.service';
 import {replyData} from '../../Models/reply';
@@ -19,9 +18,10 @@ export class Reply{
 })
 export class SinglepostComponent implements OnInit {
  
-singlePostData = {} as postResults;
+
+singlePostData = {} as postResponse;
 myArray = [];
-replies = {};
+replies:replyData[] = [];
 replyText:string;
 id:number;
 reply: Reply;
@@ -30,13 +30,14 @@ hashtag:any;
 
   ngOnInit(): void {
     this.id = this.postService.getId();
-    this.postService.getSinglePost(this.id).subscribe((singlePost =>{
+    this.postService.getSinglePost(this.id).subscribe(((singlePost:postResponse) =>{
       this.singlePostData = singlePost;
-      this.myArray.push(this.singlePostData);
+      // this.myArray.push(this.singlePostData);
       console.log(this.singlePostData);
     }))
-    this.replyService.getAllRepliesPerPost(this.id).subscribe(reply =>{
-      this.replies = reply;
+    this.replyService.getAllRepliesPerPost(this.id).subscribe((replies:replyData[]) =>{
+      this.replies = replies;
+      console.log(replies);
       
     })
 

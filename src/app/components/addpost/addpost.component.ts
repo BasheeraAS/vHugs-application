@@ -21,8 +21,8 @@ export class AddpostComponent implements OnInit {
 subject:string;
 body:string;
 myPost:post;
-myHashtags:any;
-showTags = {} as any;
+myHashtags:HashtagResponse[] = [];
+displayedHashtag:HashtagResponse;
 tagId:number;
 shouldDisplayHashtag = false;
 
@@ -30,7 +30,7 @@ shouldDisplayHashtag = false;
   constructor(public postService:PostService,private router:Router,private hashtagService:HashtagService) { }
 
   ngOnInit(): void {
-    this.hashtagService.getAllHashtags().subscribe(response=>{
+    this.hashtagService.getAllHashtags().subscribe((response:HashtagResponse[])=>{
       this.myHashtags = response;
       console.log(this.myHashtags);
     })
@@ -58,7 +58,7 @@ shouldDisplayHashtag = false;
 
   addTagToPost(id,tag){
     this.shouldDisplayHashtag = true;
-    this.showTags = tag;
+    this.displayedHashtag = tag;
     this.tagId = id;
     console.log(id);
   }

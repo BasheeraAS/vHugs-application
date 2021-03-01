@@ -1,11 +1,11 @@
 
 
 
-<div *ngFor="let post of myArray">
-    <h1>{{post.subject}}</h1>
-    <h3>{{post.body}}</h3> 
 
-    <span><img src="assets/hug-emoji.png" alt="Hugs">{{" x " +post.hugs}}</span>
+    <h1>{{singlePostData.subject}}</h1>
+    <h3>{{singlePostData.body}}</h3> 
+
+    <span><img src="assets/hug-emoji.png" alt="Hugs">{{" x " +singlePostData.hugs}}</span>
     <p *ngFor="let tag of hashtag">{{tag.hashtag}}</p>
     <br>
     <span>replies:</span>
@@ -13,7 +13,7 @@
             
             <p><em>{{reply.message}}</em></p>
             
-        </div>
+       
 
     </div>
         

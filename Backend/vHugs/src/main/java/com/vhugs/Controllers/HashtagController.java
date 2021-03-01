@@ -45,4 +45,9 @@ public class HashtagController {
 //    return postService.retrievePostById(id).getHashtags();
     return postRepository.findById(id).get().retrieveHashtags();
   }
+
+  @GetMapping("getPostByTag/{id}")
+  public Hashtag getPostByTag(@PathVariable Long id){
+    return hashtagRepository.findById(id).get();
+  }
 }
