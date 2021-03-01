@@ -19,7 +19,7 @@ export class HashtagService {
     return this.http.get<HashtagResponse>(`http://localhost:8080/getHashtag/${id}`)
   }
 
-  getPostsByTag(id){
-    return this.http.get(`http://localhost:8080/getPostByTag/${id}`)
+  getPostsByTag(id):Observable<HashtagResponse>{
+    return this.http.get<HashtagResponse>(`http://localhost:8080/getPostByTag/${id}`)
   }
 }
