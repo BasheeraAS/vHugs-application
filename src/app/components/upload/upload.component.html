@@ -4,7 +4,6 @@
       <h3 style="color: black;">vHugs Uploader</h3>
       <h4>{{ title }}</h4>
     </div>
-  
     <div *ngIf="currentFile" class="progress">
         <div class="progress-bar progress-bar-info progress-bar-striped"
           role="progressbar"
@@ -16,17 +15,13 @@
           {{ progress }}%
         </div>
       </div>
-      
       <label class="btn btn-default">
         <input type="file" (change)="selectFile($event)" />
       </label>
-      
-      <button class="btn btn-success" [disabled]="!selectedFiles"  (click)="upload()">
+      <button class="btn btn-success" [disabled]="!selectedFiles" (click)="upload()">
         Upload
       </button>
-      
       <div class="alert alert-light" *ngIf="displayMessage" role="alert">{{ message }}</div>
-      
       <div class="card">
         <div class="card-header">List of Files</div>
         <ul
@@ -41,4 +36,4 @@
         </ul>
       </div>
   </div>
-</html>
+  </html>
