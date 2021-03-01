@@ -11,6 +11,7 @@
                 <h1 class="card-title" style="font-size: 20px;"><strong>{{post.subject}}</strong></h1>
                 
                 <p class="card-text">{{post.body}}</p>
+                
                 <a class="card-link" (click)="goToSinglePost(post.id)" style="color: navy;">View Post</a>
                 <a class="card-link" (click)="addHug(post.id)" style="color: navy;"><input type="image" src="assets/hug-emoji.png" alt="Hugs" >{{" x " +post.hugs}}</a>
             
@@ -22,9 +23,13 @@
         </div> -->
       </div>
 </div>
+<div class="keywords">
+    <span>Keywords:</span>
+    <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
+</div>
 </html>
 
-
+>
 <!-- <div class="col">
 <div class="card" style="width: 60rem" *ngFor="let post of posts">
     <div class="card-body">

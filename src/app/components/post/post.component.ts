@@ -12,12 +12,17 @@ import {postResponse} from '../../Models/postResponse';
 export class PostComponent implements OnInit {
 
 posts:postResponse[] = [];
+postBody:any;
+keywordsArr =[];
+
 
   constructor(public postService: PostService,private router:Router) { }
 
   ngOnInit(): void {
     
     this.getAllPosts();
+
+    console.log(this.postService.keyWordFound);
   }
 
   goToSinglePost(id){
@@ -31,7 +36,6 @@ posts:postResponse[] = [];
 
   addHug(id){
     this.postService.addHug(id).subscribe(data=>{
-      console.log(data);
       this.getAllPosts();
     })
   }
@@ -42,10 +46,39 @@ posts:postResponse[] = [];
       
         this.posts = posts;
         this.posts.reverse();
-        console.log(this.posts);
+        this.posts.forEach(post=>{
+          
+          this.postBody = post.body.split(/\s+/);
+          
+         
+          
+  
+          this.postBody.forEach(word=>{
+            
+            const newWord = word.replace(/[^0-9a-z]/gi, '');
+            
+            this.postService.keywords.forEach(keyword=>{
+                if(newWord.toUpperCase() == keyword.word.toUpperCase()){
+                  this.keywordsArr.push(keyword);
+                }
+            })
+
+            // if(word == this.postService.keywords.word){
+            //     console.log('keyword found')
+                
+            // }
+            
+          })
+          console.log(this.postBody);
+        })
+
+    
+      
+        // console.log(this.posts);
      
-      }
-    )
+      })
+
+    
   }
 
 }

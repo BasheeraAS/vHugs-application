@@ -27,8 +27,8 @@ displayedHashtag:HashtagResponse;
 tagId:number;
 shouldDisplayHashtag = false;
 keywords = [
-  {word: 'mental',
-   link:'http://www.google.com' }
+  {word: 'mental',link:'http://www.google.com'},
+  {word: 'food',link:'http://www.google.com'}
 ]
 
 
@@ -60,6 +60,7 @@ keywords = [
       this.keywords.forEach(keyword =>{
           if(this.body.includes(keyword.word)){
             console.log(keyword.link)
+            this.postService.keyWordFound = keyword.word;
           }
       })
       this.router.navigate(['post'])

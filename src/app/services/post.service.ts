@@ -10,6 +10,20 @@ import { Observable } from 'rxjs';
 export class PostService {
   singlePost:postResponse;
   id:number;
+  keyWordFound:string;
+
+  keywords = [
+    {word: 'mental',link:'mhRes' },
+    {word: 'food',link:'insecurity'},
+    {word: 'financial',link:'financial'},
+    {word: 'shelter',link:'insecurity'},
+    {word: 'clothing',link:'insecurity'},
+    {word: 'crime',link:'crimeRes'},
+    {word: 'transportation',link:'transportation'},
+    {word: 'car',link:'transportation'},
+    {word: 'bus',link:'transportation'},
+  ]
+  
   constructor(private http:HttpClient) { }
 
   getAllPosts():Observable<postResponse[]>{
