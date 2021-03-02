@@ -1,9 +1,9 @@
 html{
     background-color:  #CCFFFF;
-  min-height: 100vh;
-  background-size: cover;
-  background-repeat: repeat;
-  object-position: 100%;
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: repeat;
+    object-position: 100%;
 }
 
 .container {
@@ -49,6 +49,7 @@ html{
 
 .card-link {
     text-align: center;
+    text-shadow: 1px 1px 5px #CCFFFF;
 }
 
 a {
