@@ -52,6 +52,7 @@ hashtag:any;
       console.log(data);
       this.getAllReplies();
     })
+    this.replyText='';
   }
 
   getAllReplies(){
