@@ -19,11 +19,15 @@ export class PostService {
     {word: 'money',link:'financial'},
     {word: 'finances',link:'financial'},
     {word: 'shelter',link:'insecurity'},
+    {word: 'housing',link:'insecurity'},
+    {word: 'apartment',link:'insecurity'},
+    {word: 'homeless',link:'insecurity'},
     {word: 'clothing',link:'insecurity'},
     {word: 'crime',link:'crimeRes'},
     {word: 'transportation',link:'transportation'},
     {word: 'car',link:'transportation'},
     {word: 'bus',link:'transportation'},
+    {word: 'class',link:'classRes'},
   ]
   
   constructor(private http:HttpClient) { }
