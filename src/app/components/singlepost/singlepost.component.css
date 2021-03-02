@@ -111,3 +111,8 @@ h4 {
 #res-contacts {
     margin-top: 80px;
 }
+
+.select{
+    height:100px;
+    overflow:scroll;
+}

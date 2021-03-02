@@ -45,7 +45,7 @@ export class UploadComponent implements OnInit {
         this.currentFile = undefined;
       });
       setTimeout(()=>{                           
-        this.displayMessage = false; this.progress = 0;}, 3000);
+        this.displayMessage = false; this.progress = 0;}, 1500);
     this.selectedFiles = undefined;
   }
   deleteFile(url){

@@ -23,10 +23,23 @@
         </div> -->
       </div>
 </div>
+
+<span>Files:</span>
+<!-- <div class="uploads" *ngFor="let file of uploadArr">
+    <a href="{{ file.url }}">{{ file.name }}</a>
+</div> -->
+
+<select class="form-select" multiple aria-label="multiple select example" onchange="location = this.value" >
+    <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
+    
+</select>
+
 <div class="keywords">
     <span>Keywords:</span>
     <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
 </div>
+
+
 
 </html>
 
