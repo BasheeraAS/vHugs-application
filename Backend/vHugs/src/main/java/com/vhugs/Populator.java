@@ -1,8 +1,10 @@
 package com.vhugs;
 
+import com.vhugs.Models.Chat;
 import com.vhugs.Models.Hashtag;
 import com.vhugs.Models.Post;
 import com.vhugs.Models.Reply;
+import com.vhugs.Repos.ChatRepository;
 import com.vhugs.Repos.HashtagRepository;
 import com.vhugs.Repos.PostRepository;
 import com.vhugs.Repos.ReplyRepository;
@@ -20,6 +22,9 @@ public class Populator implements CommandLineRunner {
 
     @Autowired
     private HashtagRepository hashtagRepository;
+
+    @Autowired
+    private ChatRepository chatRepository;
 
     @Override
     public void run(String... args) throws Exception {
@@ -49,5 +54,11 @@ public class Populator implements CommandLineRunner {
 //        firstPost.addHashtag(tag1);
         postRepo.save(firstPost);
         postRepo.save(secondPost);
+
+      Chat chat1 = new Chat("Hello friends!","Mike");
+      Chat chat2 = new Chat("Hello There mike! How are you?","Tina");
+
+      chatRepository.save(chat1);
+      chatRepository.save(chat2);
     }
 }

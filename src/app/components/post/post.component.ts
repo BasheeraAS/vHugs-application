@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {PostService} from '../../services/post.service';
 import {postResponse} from '../../Models/postResponse';
+import { UploadFileService } from 'src/app/services/upload-file.service';
 
 
 @Component({
@@ -14,15 +15,23 @@ export class PostComponent implements OnInit {
 posts:postResponse[] = [];
 postBody:any;
 keywordsArr =[];
+uploadArr = [];
 
 
-  constructor(public postService: PostService,private router:Router) { }
+  constructor(public postService: PostService,private router:Router,private uploadFileService:UploadFileService) { }
 
   ngOnInit(): void {
     
     this.getAllPosts();
-
+    this.getAllFiles();
     
+  }
+
+  getAllFiles(){
+    this.uploadFileService.getFiles().subscribe(data=>{
+      console.log(data);
+      this.uploadArr = data;
+    })
   }
 
   goToSinglePost(id){

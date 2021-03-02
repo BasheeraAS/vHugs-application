@@ -25,6 +25,8 @@ import { TestComponent } from './components/test/test.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HashtagComponent } from './components/hashtag/hashtag.component';
 import { HashtagPostComponent } from './components/hashtag-post/hashtag-post.component';
+import { ChatComponent } from './components/chat/chat.component';
+
 
 @NgModule({
   declarations: [
@@ -48,7 +50,8 @@ import { HashtagPostComponent } from './components/hashtag-post/hashtag-post.com
     TestComponent,
     FooterComponent,
     HashtagComponent,
-    HashtagPostComponent
+    HashtagPostComponent,
+    ChatComponent,
   ],
   imports: [
     BrowserModule,

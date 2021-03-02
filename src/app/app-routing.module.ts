@@ -19,6 +19,7 @@ import { CrimeComponent } from './components/resources/crime/crime.component';
 import {TestComponent} from '../app/components/test/test.component';
 import{HashtagComponent} from './components/hashtag/hashtag.component';
 import {HashtagPostComponent} from './components/hashtag-post/hashtag-post.component';
+import {ChatComponent} from '../app/components/chat/chat.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -44,6 +45,7 @@ const routes: Routes = [
   {path:"test",component:TestComponent,canActivate:[RouteGuardService]},
   {path:"hashtags",component:HashtagComponent,canActivate:[RouteGuardService]},
   {path:"hashtagpost",component:HashtagPostComponent,canActivate:[RouteGuardService]},
+  {path:"chat",component:ChatComponent,canActivate:[RouteGuardService]},
 
   {path: '**', redirectTo:'login'}
 ];

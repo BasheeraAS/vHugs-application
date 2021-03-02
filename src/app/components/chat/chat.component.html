@@ -1,0 +1,6 @@
+<div class="container" *ngFor="let chat of chatArr async">
+    <span>{{chat.username}} : </span> <span>{{chat.message}}</span>
+   
+</div>
+ <input style="max-width: 280px;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="message" [(ngModel)]="message">
+<button type="submit"(click)="addChat()" style="background-color:#003399; color:white">Send</button>
