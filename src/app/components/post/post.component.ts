@@ -22,7 +22,7 @@ keywordsArr =[];
     
     this.getAllPosts();
 
-    console.log(this.postService.keyWordFound);
+    
   }
 
   goToSinglePost(id){

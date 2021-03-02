@@ -10,12 +10,14 @@ import { Observable } from 'rxjs';
 export class PostService {
   singlePost:postResponse;
   id:number;
-  keyWordFound:string;
+  
 
   keywords = [
     {word: 'mental',link:'mhRes' },
     {word: 'food',link:'insecurity'},
     {word: 'financial',link:'financial'},
+    {word: 'money',link:'financial'},
+    {word: 'finances',link:'financial'},
     {word: 'shelter',link:'insecurity'},
     {word: 'clothing',link:'insecurity'},
     {word: 'crime',link:'crimeRes'},

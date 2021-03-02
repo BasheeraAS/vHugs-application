@@ -26,10 +26,7 @@ myHashtags:HashtagResponse[] = [];
 displayedHashtag:HashtagResponse;
 tagId:number;
 shouldDisplayHashtag = false;
-keywords = [
-  {word: 'mental',link:'http://www.google.com'},
-  {word: 'food',link:'http://www.google.com'}
-]
+
 
 
   constructor(public postService:PostService,private router:Router,private hashtagService:HashtagService) { }
@@ -57,12 +54,7 @@ keywords = [
          
       }
 
-      this.keywords.forEach(keyword =>{
-          if(this.body.includes(keyword.word)){
-            console.log(keyword.link)
-            this.postService.keyWordFound = keyword.word;
-          }
-      })
+     
       this.router.navigate(['post'])
     })
    
