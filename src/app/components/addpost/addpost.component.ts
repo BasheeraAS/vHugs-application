@@ -26,6 +26,7 @@ myHashtags:HashtagResponse[] = [];
 displayedHashtag:HashtagResponse;
 tagId:number;
 shouldDisplayHashtag = false;
+totalChars = 255;
 
 
 

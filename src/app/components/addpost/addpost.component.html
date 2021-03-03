@@ -19,6 +19,7 @@
           <label for="exampleFormControlTextarea1" class="form-label"></label>
           <textarea style="width: 600px;" class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="body" placeholder="Post"></textarea>
         </div>
+        <span>Characters Left: {{totalChars-body.length}}</span>
         <p *ngIf="shouldDisplayHashtag">{{displayedHashtag}}</p>
         <button type="submit"(click)="addPost()" style="background-color:#003399; color:white">Add Post</button>
         <div id="menu">
