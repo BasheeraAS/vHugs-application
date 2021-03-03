@@ -1,7 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthButtonComponent} from './../app/components/login/login.component';
@@ -27,7 +25,7 @@ import { HashtagComponent } from './components/hashtag/hashtag.component';
 import { HashtagPostComponent } from './components/hashtag-post/hashtag-post.component';
 import { ChatComponent } from './components/chat/chat.component';
 import { AuthModule } from '@auth0/auth0-angular';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,14 +53,13 @@ import { AuthModule } from '@auth0/auth0-angular';
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
     AuthModule.forRoot({
       domain: 'dev-2l31c7yc.us.auth0.com',
       clientId: 'DRtrRV35vFzpVUOkZf4cdS1M6QgwYZ8k'}),
-    AppRoutingModule,
-    FormsModule,
-    
     ],
-  
   bootstrap: [AppComponent],
 })
 export class AppModule { }

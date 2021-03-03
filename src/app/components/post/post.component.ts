@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import {PostService} from '../../services/post.service';
 import {postResponse} from '../../Models/postResponse';
 import { UploadFileService } from 'src/app/services/upload-file.service';
-
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-post',
@@ -18,10 +18,10 @@ keywordsArr =[];
 uploadArr = [];
 
 
-  constructor(public postService: PostService,private router:Router,private uploadFileService:UploadFileService) { }
+  constructor(public postService: PostService,private router:Router,private uploadFileService:UploadFileService, private loginService:LoginService) { }
 
   ngOnInit(): void {
-    
+    this.loginService.isUserLoggedIn=true;
     this.getAllPosts();
     this.getAllFiles();
     
