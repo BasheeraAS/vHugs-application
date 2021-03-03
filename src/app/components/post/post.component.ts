@@ -67,15 +67,14 @@ uploadArr = [];
             const newWord = word.replace(/[^0-9a-z]/gi, '');
             
             this.postService.keywords.forEach(keyword=>{
-                if(newWord.toUpperCase() == keyword.word.toUpperCase()){
+              
+                
+                if((newWord.toUpperCase() == keyword.word.toUpperCase()) && (!this.keywordsArr.includes(keyword))){
                   this.keywordsArr.push(keyword);
-                }
+              } 
+              
             })
 
-            // if(word == this.postService.keywords.word){
-            //     console.log('keyword found')
-                
-            // }
             
           })
           console.log(this.postBody);
@@ -83,7 +82,7 @@ uploadArr = [];
 
     
       
-        // console.log(this.posts);
+      
      
       })
 
