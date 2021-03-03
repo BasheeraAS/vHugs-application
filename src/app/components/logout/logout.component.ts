@@ -1,24 +1,22 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginService } from 'src/app/services/login.service';
+import { Component, Inject } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
-  selector: 'app-logout',
-  templateUrl: './logout.component.html',
-  styleUrls: ['./logout.component.css']
+  selector: 'app-auth-button',
+  template: `
+    <ng-container *ngIf="auth.isAuthenticated$ | async; else loggedOut">
+      <button (click)="auth.logout({ returnTo: document.location.origin })">
+        Log out
+      </button>
+    </ng-container>
+
+    <ng-template #loggedOut>
+      <button (click)="auth.loginWithRedirect()">Log in</button>
+    </ng-template>
+  `,
+  styles: [],
 })
-export class LogoutComponent implements OnInit {
-
-  constructor(public loginService:LoginService,private router:Router) { }
-
-  ngOnInit(): void {
-    this.logout();
-  }
-
-  logout(){
-    this.loginService.isUserLoggedIn = false;
-    console.log(this.loginService.isUserLoggedIn);
-    this.router.navigate([''])
-  }
-
+export class AuthOutButtonComponent {
+  constructor(@Inject(DOCUMENT) public document: Document, public auth: AuthService) {}
 }
