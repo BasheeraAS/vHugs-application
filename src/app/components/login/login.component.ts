@@ -15,7 +15,7 @@ username = "";
   }
 
   handleLogin(){
-  
+    this.loginService.setUsername(this.username);
     console.log('username is: ' + this.loginService.getUsername());
     this.loginService.isUserLoggedIn = true;
     
