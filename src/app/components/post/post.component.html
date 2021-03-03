@@ -1,12 +1,23 @@
  <html>
- <div class="container">
-
-    <div class="row" >
+ <!--  -->
+    
+    <div class="row">
         <!-- <div class="col-sm">
             aaaa
         </div> -->
-        <div *ngFor="let post of posts" class="col-md-4 col-sm-12">
-            <div class="card cardMike" style="width: 70rem">
+        <div class="column left">
+        <div class="keywords">
+           
+            <span><h1 class="card-title">vHug Words</h1></span>
+            <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
+        </div>
+        </div>
+        <div class="column middle">
+        <div class="container">
+        <div *ngFor="let post of posts" >
+            <!-- class="col-md-4 col-sm-12" -->
+            <div class="card cardMike" >
+                <!-- style="width: 400rem" -->
                 <div class="card-body">
                 <h1 class="card-title" style="font-size: 20px;"><strong>{{post.subject}}</strong></h1>
                 
@@ -18,26 +29,25 @@
             </div>
             </div>
         </div>
+    </div>    
+    </div>
         <!-- <div class="col-sm">
             
         </div> -->
-      </div>
-</div>
-
-<span>Files:</span>
-<!-- <div class="uploads" *ngFor="let file of uploadArr">
-    <a href="{{ file.url }}">{{ file.name }}</a>
-</div> -->
-
-<select class="form-select" multiple aria-label="multiple select example" onchange="location = this.value" >
-    <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
+        <div class="column right">
+        <div class="download-resources">
+            <span><h1 class="card-title">Suggested resources</h1></span>
+            
+                    <select class="form-select" multiple aria-label="multiple select example" onchange="location = this.value" >
+                        <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
+                        
+                    </select>  
+        </div>
+        </div>
+    </div>
     
-</select>
+<!-- </div> -->
 
-<div class="keywords">
-    <span>Keywords:</span>
-    <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
-</div>
 
 
 
