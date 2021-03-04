@@ -6,14 +6,23 @@ import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-auth-button',
-  template: '<button (click)="loginWithRedirect()">Log in</button>'
-  
+  templateUrl:  './login.component.html',
+  styleUrls: ['./login.component.css']
 })
 export class AuthButtonComponent {
-  // Inject the authentication service into your component through the constructor
+  username:string;
   constructor(public auth: AuthService, private router:Router, private loginService:LoginService) {}
   loginWithRedirect(){
-   
+    // this.loginService.isUserLoggedIn=true;
+    // this.loginService.userAuthLoggedIn = true;
+    // console.log(this.loginService.userAuthLoggedIn)
     this.auth.loginWithRedirect({redirect_uri:'http://localhost:4200/post'});
+     }
+
+     handleLogin(){
+      this.loginService.isUserLoggedIn=true;
+      this.loginService.notLoggedIn = false;
+      this.loginService.setUsername(this.username);
+       this.router.navigate(['post'])
      }
 }

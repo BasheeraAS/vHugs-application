@@ -4,7 +4,7 @@ import { AuthButtonComponent } from './components/login/login.component';
 import { PostComponent } from './components/post/post.component';
 import { SinglepostComponent } from './components/singlepost/singlepost.component';
 import {AddpostComponent} from './components/addpost/addpost.component';
-import { AuthOutButtonComponent } from '../app/components/logout/logout.component';
+import {  LogoutComponent } from '../app/components/logout/logout.component';
 import {RouteGuardService} from './route-guard.service';
 import {ErrorComponent} from './components/error/error.component';
 import {ResourcesComponent} from './components/resources/resources.component';
@@ -28,11 +28,12 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
+  
   {path:"login",component:AuthButtonComponent},
   {path:"post",component:PostComponent},
   {path:"singlepost",component:SinglepostComponent,canActivate:[RouteGuardService]},
   {path:"addpost",component:AddpostComponent,canActivate:[RouteGuardService]},
-  {path:"logout",component:AuthOutButtonComponent,canActivate:[RouteGuardService]},
+  {path:"logout",component:LogoutComponent,canActivate:[RouteGuardService]},
   {path:"resource",component:ResourcesComponent,canActivate:[RouteGuardService]},
   {path:"upload",component:UploadComponent,canActivate:[RouteGuardService]},
   {path:"classRes",component:ClassComponent,canActivate:[RouteGuardService]},
@@ -47,7 +48,7 @@ const routes: Routes = [
   {path:"hashtagpost",component:HashtagPostComponent,canActivate:[RouteGuardService]},
   {path:"chat",component:ChatComponent,canActivate:[RouteGuardService]},
 
-  {path: '**', redirectTo:'login'}
+  {path: '**', redirectTo:'post'}
 ];
 
 @NgModule({

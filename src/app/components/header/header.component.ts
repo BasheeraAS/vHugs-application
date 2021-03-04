@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { LoginService } from 'src/app/services/login.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { LoginService } from 'src/app/services/login.service';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(public loginService:LoginService) { }
+  constructor(public loginService:LoginService,public auth:AuthService) { }
 
   ngOnInit(): void {
-    
+    this.auth.user$.subscribe(data=>{
+      console.log(data)
+    })
+   
     
   }
 

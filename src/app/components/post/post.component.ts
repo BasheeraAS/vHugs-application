@@ -1,93 +1,88 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import {PostService} from '../../services/post.service';
-import {postResponse} from '../../Models/postResponse';
+import { PostService } from '../../services/post.service';
+import { postResponse } from '../../Models/postResponse';
 import { UploadFileService } from 'src/app/services/upload-file.service';
-import { LoginService } from '../../services/login.service';
+import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
   selector: 'app-post',
   templateUrl: './post.component.html',
-  styleUrls: ['./post.component.css']
+  styleUrls: ['./post.component.css'],
 })
 export class PostComponent implements OnInit {
+  posts: postResponse[] = [];
+  postBody: any;
+  keywordsArr = [];
+  uploadArr = [];
 
-posts:postResponse[] = [];
-postBody:any;
-keywordsArr =[];
-uploadArr = [];
-
-
-  constructor(public postService: PostService,private router:Router,private uploadFileService:UploadFileService, private loginService:LoginService) { }
+  constructor(
+    public postService: PostService,
+    private router: Router,
+    private uploadFileService: UploadFileService,
+    public loginService:LoginService,
+    public auth:AuthService
+  ) {}
 
   ngOnInit(): void {
-    this.loginService.isUserLoggedIn=true;
+    this.loginService.checkIfUserLoggedIn();
+    console.log(this.loginService.userAuthLoggedIn)
     this.getAllPosts();
     this.getAllFiles();
-    
+    if(this.loginService.userAuthLoggedIn){
+      
+      this.auth.user$.subscribe(data=>{
+        this.loginService.setUsername(data.name)
+        console.log(this.loginService.getUsername())
+      })
+    } else if(this.loginService.isUserLoggedIn){
+        this.loginService.setUsername(this.loginService.getUsername())
+    }
+ 
   }
 
-  getAllFiles(){
-    this.uploadFileService.getFiles().subscribe(data=>{
+  getAllFiles() {
+    this.uploadFileService.getFiles().subscribe((data) => {
       console.log(data);
       this.uploadArr = data;
-    })
+    });
   }
 
-  goToSinglePost(id){
-  
+  goToSinglePost(id) {
     this.postService.setId(id);
     this.router.navigate(['singlepost']);
   }
-  addPost(){
+  addPost() {
     this.router.navigate(['addpost']);
   }
 
-  addHug(id){
-    this.postService.addHug(id).subscribe(data=>{
+  addHug(id) {
+    this.postService.addHug(id).subscribe((data) => {
       this.getAllPosts();
-    })
+    });
   }
 
-  getAllPosts(){
-    this.postService.getAllPosts().subscribe(
-      (posts:postResponse[]) => {
-      
-        this.posts = posts;
-        this.posts.reverse();
-        this.posts.forEach(post=>{
-          
-          this.postBody = post.body.split(/\s+/);
-          
-         
-          
-  
-          this.postBody.forEach(word=>{
-            
-            const newWord = word.replace(/[^0-9a-z]/gi, '');
-            
-            this.postService.keywords.forEach(keyword=>{
-                if(newWord.toUpperCase() == keyword.word.toUpperCase()){
-                  this.keywordsArr.push(keyword);
-                }
-            })
+  getAllPosts() {
+    this.postService.getAllPosts().subscribe((posts: postResponse[]) => {
+      this.posts = posts;
+      this.posts.reverse();
+      this.posts.forEach((post) => {
+        this.postBody = post.body.split(/\s+/);
 
-            // if(word == this.postService.keywords.word){
-            //     console.log('keyword found')
-                
-            // }
-            
-          })
-          console.log(this.postBody);
-        })
+        this.postBody.forEach((word) => {
+          const newWord = word.replace(/[^0-9a-z]/gi, '');
 
-    
-      
-        // console.log(this.posts);
-     
-      })
-
-    
+          this.postService.keywords.forEach((keyword) => {
+            if (
+              newWord.toUpperCase() == keyword.word.toUpperCase() &&
+              !this.keywordsArr.includes(keyword)
+            ) {
+              this.keywordsArr.push(keyword);
+            }
+          });
+        });
+      });
+    });
   }
-
 }

@@ -8,7 +8,6 @@ import { FormsModule } from '@angular/forms';
 import { SinglepostComponent } from './components/singlepost/singlepost.component';
 import { AddpostComponent } from './components/addpost/addpost.component';
 import { HeaderComponent } from './components/header/header.component';
-import { AuthOutButtonComponent } from './components/logout/logout.component';
 import { ErrorComponent } from './components/error/error.component';
 import { ResourcesComponent } from './components/resources/resources.component';
 import { UploadComponent } from './components/upload/upload.component';
@@ -26,6 +25,8 @@ import { HashtagPostComponent } from './components/hashtag-post/hashtag-post.com
 import { ChatComponent } from './components/chat/chat.component';
 import { AuthModule } from '@auth0/auth0-angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { StartheaderComponent } from './components/startheader/startheader.component';
+import { AuthheaderComponent } from './components/authheader/authheader.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,6 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     SinglepostComponent,
     AddpostComponent,
     HeaderComponent,
-    AuthOutButtonComponent,
     ErrorComponent,
     ResourcesComponent,
     UploadComponent,
@@ -49,7 +49,9 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FooterComponent,
     HashtagComponent,
     HashtagPostComponent,
-    ChatComponent
+    ChatComponent,
+    StartheaderComponent,
+    AuthheaderComponent
   ],
   imports: [
     BrowserModule,

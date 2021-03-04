@@ -10,11 +10,12 @@ export class RouteGuardService {
   constructor(private router:Router,private loginService:LoginService) { }
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot){
-    if(this.loginService.isUserLoggedIn){
+    if(this.loginService.isUserLoggedIn || this.loginService.userAuthLoggedIn){
       return true
     } else {
-      this.router.navigate([''])
+      this.router.navigate(['login'])
       return false
     }
   }
+  // return true;
 }
