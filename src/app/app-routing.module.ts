@@ -45,7 +45,7 @@ const routes: Routes = [
   {path:"transportation",component:TransportationComponent,canActivate:[RouteGuardService]},
   {path:"test",component:TestComponent,canActivate:[RouteGuardService]},
   {path:"hashtags",component:HashtagComponent,canActivate:[RouteGuardService]},
-  {path:"hashtagpost",component:HashtagPostComponent,canActivate:[RouteGuardService]},
+  {path:"hashtagpost",component:HashtagPostComponent},
   {path:"chat",component:ChatComponent,canActivate:[RouteGuardService]},
 
   {path: '**', redirectTo:'post'}

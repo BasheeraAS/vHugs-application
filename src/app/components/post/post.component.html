@@ -42,7 +42,18 @@
                            <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
                            
                        </select>  
+                      
            </div>
+           <br>
+           <div class="download-resources">
+            <span><h1 class="card-title"><strong>Hashtags</strong></h1></span>
+            
+                    <select class="form-select" multiple aria-label="multiple select example" (change)="gotoHashtagPosts($event)">
+                      <option *ngFor="let tag of myHashtags" value="{{tag.id}}">{{ tag.hashtag }}</option> 
+                        
+                    </select>  
+        </div>
+
            </div>
        </div>
        
