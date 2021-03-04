@@ -8,6 +8,7 @@ li{
 
 .navbar-nav {
     text-shadow: 1px 1px 5px white;
+    height:6vh;
 }
 
 .navbar-brand {

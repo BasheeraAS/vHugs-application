@@ -27,10 +27,13 @@ user:string;
 
   ngOnInit(): void {
     this.getAllChats();
-    this.auth.user$.subscribe(data=>{
-      console.log(data);
-      this.user = data.name;
-    })
+    if(this.loginService.userAuthLoggedIn){
+      this.auth.user$.subscribe(data=>{
+        console.log(data);
+        this.user = data.name;
+      })
+    }
+  
   }
 
   addChat(){
