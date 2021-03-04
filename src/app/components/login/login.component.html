@@ -1,7 +1,7 @@
 
 <body>
   <div class="imageClass">
-  <div class="banner-image"></div>
+  <div class="banner-image" rel="banner-image"></div>
   <div class="slide"><p class="content">
     Have you ever needed a hug or advice, but NOT the recognition? Maybe you’re embarrassed to ask for help 
     or worried about seeking resources or simply want to be in your feelings without explanation.
@@ -22,7 +22,7 @@
            <input type="text" name="username" [(ngModel)]="username" placeholder="Username">
            <button type="button" class="btn btn-primary" (click)="handleLogin()" style="background-color:#003399">Login</button>
            <br>
-           <button type="button" class="btn btn-primary" (click)="handleLogin()" style="background-color:#003399">Login</button>
+           <button (click)="loginWithRedirect()">Authorized Login</button>
          </div>
        </div>
        

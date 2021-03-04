@@ -36,7 +36,7 @@
            
            <!-- <li *ngIf="this.loginService.isUserLoggedIn"  class="nav-link" style="color: #CCFFFF;">{{this.loginService.getUsername()}}</li>
             <li *ngIf="this.loginService.isUserLoggedIn"><a routerLink="logout"><button type="submit" class="btn btn-outline-warning" style="color:white">Logout</button></a> -->
-                <li *ngIf="auth.user$  | async as user"  class="nav-link" style="color: #CCFFFF;">{{user.name}}<img src="{{user.picture}}"></li>
+                <li *ngIf="auth.user$  | async as user"  class="nav-link" style="color: #CCFFFF;">{{user.name}}  <img src="{{user.picture}}"></li>
             <li *ngIf="auth.user$  | async as user"><a routerLink="logout"><button type="submit" class="btn btn-outline-warning" style="color:white">Logout</button></a>
         </ul>
 </nav>
