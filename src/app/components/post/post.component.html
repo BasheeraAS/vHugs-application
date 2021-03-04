@@ -8,13 +8,13 @@
         <div class="column left">
         <div class="keywords">
            
-            <span><h1 class="card-title">vHug Words</h1></span>
+            <span><h1 class="card-title"><strong>vHug Words</strong></h1></span>
             <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
         </div>
         </div>
         <div class="column middle">
         <div class="container">
-        <div *ngFor="let post of posts" >
+        <div *ngFor="let post of posts" style="margin: 10px 0px 10px 0px">
             <!-- class="col-md-4 col-sm-12" -->
             <div class="card cardMike" >
                 <!-- style="width: 400rem" -->
@@ -36,7 +36,7 @@
         </div> -->
         <div class="column right">
         <div class="download-resources">
-            <span><h1 class="card-title">Suggested resources</h1></span>
+            <span><h1 class="card-title"><strong>Suggested Resources</strong></h1></span>
             
                     <select class="form-select" multiple aria-label="multiple select example" onchange="location = this.value" >
                         <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
