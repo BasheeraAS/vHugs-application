@@ -20,18 +20,12 @@ export class AuthButtonComponent {
     this.auth.loginWithRedirect({redirect_uri:'http://localhost:4200/post'});
      }
 
-export class LoginComponent implements OnInit {
-username = "";
-  constructor(private loginService:LoginService,private router:Router) { }
-
-  ngOnInit(): void {
-  }
 
   handleLogin(){
     this.loginService.setUsername(this.username);
     console.log('username is: ' + this.loginService.getUsername());
     this.loginService.isUserLoggedIn = true;
-    
+    this.loginService.notLoggedIn = false;
     this.router.navigate(['post'])
   }
 
