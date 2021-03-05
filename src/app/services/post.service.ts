@@ -26,7 +26,12 @@ export class PostService {
     {word: 'crime',link:'crimeRes'},
     {word: 'transportation',link:'transportation'},
     {word: 'car',link:'transportation'},
-    {word: 'bus',link:'transportation'},
+    {word: 'bus', link: 'transportation' },
+    {word: 'coding', link: 'classRes'},
+    {word: 'practice', link: 'classRes' },
+    { word: 'Git', link: 'classRes' },
+    { word: 'Gitbash', link: 'classRes' },
+    {word: 'Github', link: 'classRes'},
     {word: 'class',link:'classRes'},
   ]
   
