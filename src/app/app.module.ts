@@ -27,6 +27,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StartheaderComponent } from './components/startheader/startheader.component';
 import { AuthheaderComponent } from './components/authheader/authheader.component';
+import { AboutComponent } from './components/about/about.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,7 +52,8 @@ import { AuthheaderComponent } from './components/authheader/authheader.componen
     HashtagPostComponent,
     ChatComponent,
     StartheaderComponent,
-    AuthheaderComponent
+    AuthheaderComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
