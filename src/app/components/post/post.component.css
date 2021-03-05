@@ -20,7 +20,6 @@ html{
     padding-bottom: 100px;
     margin: 10px 0px 10px 0px;
     flex-wrap: wrap;
-    border: 1px solid red;
 }
   
   .column {
@@ -34,7 +33,6 @@ html{
     height: 100%;
     display: flex;
     /* justify-content: right; */
-    border: 1px solid red;
   }
 
   .right {
@@ -42,7 +40,6 @@ html{
     height: 100%;
     display: flex;
     justify-content: left;
-    border: 1px solid red;
   }
   
   .middle {
@@ -51,7 +48,6 @@ html{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    border: 1px solid red;
   }
 
 .let post of posts {
@@ -66,7 +62,6 @@ html{
     justify-content: center;
     text-align: center;
     margin: 10px 10px;
-    border: 1px solid red;
 }
 
 .cardMike {
@@ -82,14 +77,12 @@ html{
     background-color: white;
     width: 340px;
     height:100%;
-    border: 1px solid red;
 }
 
 .card-title {
     font-size: 18px;
     justify-content: center;
     text-align: center;
-    border: 1px solid red;
 
 }
 
@@ -131,13 +124,11 @@ a {
     background-color: white;
     width: 150px;
     height:100%;
-    border: 1px solid red;
 }
 
 .row {
     width: 100%;
     height: 100%;
-    border: 1px solid red;
 }
 
 .download-resources {
@@ -155,7 +146,6 @@ a {
     background-color: white;
     width: 240px;
     height: 100%;
-    border: 1px solid red;
 }
 
 .hashtags {
@@ -173,5 +163,4 @@ a {
     background-color: white;
     width: 240px;
     height: 100%;
-    border: 1px solid red;
 }
