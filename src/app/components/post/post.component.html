@@ -6,12 +6,14 @@
                aaaa
            </div> -->
            <div class="column left">
-           <div class="keywords">
+            <div class="container">
+            <div class="keywords">
               
                <span><h1 class="card-title"><strong>vHug Words</strong></h1></span>
                <p *ngFor="let keyword of keywordsArr"><a routerLink="/{{keyword.link}}">{{keyword.word.toUpperCase()}}</a></p>
            </div>
-           </div>
+            </div>
+            </div>
            <div class="column middle">
            <div class="container">
            <div *ngFor="let post of posts" style="margin: 10px 0px 10px 0px">
@@ -35,25 +37,25 @@
                
            </div> -->
            <div class="column right">
-           <div class="download-resources">
+           <div class="container">
+            <div class="download-resources">
                <span><h1 class="card-title"><strong>Suggested Resources</strong></h1></span>
                
                        <select class="form-select" multiple aria-label="multiple select example" onchange="location = this.value" >
                            <option *ngFor="let file of uploadArr" value="{{ file.url }}" ><a  href="{{ file.url }}">{{ file.name }}</a></option>
                            
                        </select>  
-                      
            </div>
-           <br>
-           <div class="download-resources">
+
+           <div class="hashtags">
             <span><h1 class="card-title"><strong>Hashtags</strong></h1></span>
             
-                    <select class="form-select" multiple aria-label="multiple select example" (change)="gotoHashtagPosts($event)">
-                      <option *ngFor="let tag of myHashtags" value="{{tag.id}}">{{ tag.hashtag }}</option> 
+            <select class="form-select" multiple aria-label="multiple select example" (change)="gotoHashtagPosts($event)">
+                <option *ngFor="let tag of myHashtags" value="{{tag.id}}">{{ tag.hashtag }}</option> 
                         
-                    </select>  
-        </div>
-
+                    </select>
+            </div>
+           </div>
            </div>
        </div>
        
@@ -63,4 +65,3 @@
    
    
    </html>
-   
