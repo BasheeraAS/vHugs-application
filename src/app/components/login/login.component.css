@@ -23,7 +23,7 @@ body {
     background-position: left;
 }
 .banner-image {
-  background-image: url("https://i.postimg.cc/VvfV7h5c/slide-banner.jpg");
+  background-image: url("src\assets\slide-banner.jpg");
  /* height:50vh;
  width: 100vw; */
  height:100%;
