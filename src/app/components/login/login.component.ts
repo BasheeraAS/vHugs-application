@@ -9,6 +9,7 @@ import { AuthService } from '@auth0/auth0-angular';
   templateUrl:  './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class AuthButtonComponent {
   username:string;
   constructor(public auth: AuthService, private router:Router, private loginService:LoginService) {}
@@ -19,10 +20,20 @@ export class AuthButtonComponent {
     this.auth.loginWithRedirect({redirect_uri:'http://localhost:4200/post'});
      }
 
-     handleLogin(){
-      this.loginService.isUserLoggedIn=true;
-      this.loginService.notLoggedIn = false;
-      this.loginService.setUsername(this.username);
-       this.router.navigate(['post'])
-     }
+export class LoginComponent implements OnInit {
+username = "";
+  constructor(private loginService:LoginService,private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+  handleLogin(){
+    this.loginService.setUsername(this.username);
+    console.log('username is: ' + this.loginService.getUsername());
+    this.loginService.isUserLoggedIn = true;
+    
+    this.router.navigate(['post'])
+  }
+
+
 }
