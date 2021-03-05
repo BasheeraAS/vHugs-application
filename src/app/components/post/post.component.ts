@@ -3,6 +3,10 @@ import { Router } from '@angular/router';
 import { PostService } from '../../services/post.service';
 import { postResponse } from '../../Models/postResponse';
 import { UploadFileService } from 'src/app/services/upload-file.service';
+import { LoginService } from 'src/app/services/login.service';
+import { AuthService } from '@auth0/auth0-angular';
+import {HashtagService} from '../../services/hashtag.service';
+import {HashtagResponse} from '../../Models/HashtagResponse';
 
 @Component({
   selector: 'app-post',
@@ -14,16 +18,31 @@ export class PostComponent implements OnInit {
   postBody: any;
   keywordsArr = [];
   uploadArr = [];
-
+  myHashtags:HashtagResponse[] = [];
   constructor(
     public postService: PostService,
     private router: Router,
-    private uploadFileService: UploadFileService
+    private uploadFileService: UploadFileService,
+    public loginService:LoginService,
+    public auth:AuthService,
+    public hashtagService:HashtagService
   ) {}
 
   ngOnInit(): void {
+    this.loginService.checkIfUserLoggedIn();
+    this.getHashtags();
     this.getAllPosts();
     this.getAllFiles();
+    if(this.loginService.userAuthLoggedIn){
+      
+      this.auth.user$.subscribe(data=>{
+        this.loginService.setUsername(data.name)
+        console.log(this.loginService.getUsername())
+      })
+    } else if(this.loginService.isUserLoggedIn){
+        this.loginService.setUsername(this.loginService.getUsername())
+    }
+ 
   }
 
   getAllFiles() {
@@ -69,4 +88,17 @@ export class PostComponent implements OnInit {
       });
     });
   }
+
+  getHashtags(){
+    this.hashtagService.getAllHashtags().subscribe((response:HashtagResponse[])=>{
+      this.myHashtags = response;
+      console.log(this.myHashtags);
+    })
+  }
+
+  gotoHashtagPosts(event:any){
+    
+    this.hashtagService.hashtagId = event.target.value;
+  this.router.navigate(['hashtagpost']);
+}
 }

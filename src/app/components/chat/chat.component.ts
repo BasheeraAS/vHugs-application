@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '@auth0/auth0-angular';
 import { chatResponse } from 'src/app/Models/chatResponse';
 import { ChatService } from 'src/app/services/chat.service';
 import {LoginService} from '../../services/login.service';
@@ -19,12 +20,20 @@ export class myChat{
 
 export class ChatComponent implements OnInit {
 
-  constructor(private chatService:ChatService,private loginService:LoginService) { }
+  constructor(private chatService:ChatService,private loginService:LoginService,public auth:AuthService) { }
 chatArr:chatResponse[] = [];
 message:string;
+user:string;
 
   ngOnInit(): void {
     this.getAllChats();
+    if(this.loginService.userAuthLoggedIn){
+      this.auth.user$.subscribe(data=>{
+        console.log(data);
+        this.user = data.name;
+      })
+    }
+  
   }
 
   addChat(){

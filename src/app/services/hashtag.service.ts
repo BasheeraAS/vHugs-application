@@ -22,4 +22,8 @@ export class HashtagService {
   getPostsByTag(id):Observable<HashtagResponse>{
     return this.http.get<HashtagResponse>(`http://localhost:8080/getPostByTag/${id}`)
   }
+
+  setHashtagId(id){
+    this.hashtagId = id;
+  }
 }

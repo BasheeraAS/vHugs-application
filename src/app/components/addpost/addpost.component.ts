@@ -20,7 +20,7 @@ export class post{
 })
 export class AddpostComponent implements OnInit {
 subject:string;
-body:string;
+body = "";
 myPost:post;
 myHashtags:HashtagResponse[] = [];
 displayedHashtag:HashtagResponse;

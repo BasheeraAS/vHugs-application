@@ -1,3 +1,4 @@
+  
 html{
     background-color:  #CCFFFF;
     min-height: 100vh;
@@ -10,31 +11,7 @@ html{
     box-sizing: border-box;
   }
   
-  .column {
-    float: left;
-    padding: 10px;
-    height: 100%;
-  }
-  
-  .left {
-    width: 12%;
-  }
-
-  .right {
-    width: 16%;
-    display: flex;
-    justify-content: left;
-  }
-  
-  .middle {
-    width: 72%;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-
-.container {
+  .container {
     background-color:  #CCFFFF;
     width: 100%;
     height: 100%;
@@ -42,9 +19,37 @@ html{
     display: flex;
     justify-content: left;
     padding-bottom: 100px;
-    margin: 10px 10px;
+    margin: 10px 0px 10px 0px;
     flex-wrap: wrap;
 }
+  
+  .column {
+    float: left;
+    /* padding: 10px; */
+    height: 100%;
+  }
+  
+  .left {
+    width: 11%;
+    height: 100%;
+    display: flex;
+    /* justify-content: right; */
+  }
+
+  .right {
+    width: 17%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+  }
+  
+  .middle {
+    width: 72%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 
 .let post of posts {
     display: flex;
@@ -71,7 +76,7 @@ html{
     border-radius: 20px;
     border-width: 3px;
     background-color: white;
-    width: 330px;
+    width: 340px;
     height:100%;
 }
 
@@ -112,14 +117,14 @@ a {
     justify-content: top;
     flex-direction: column;
     padding: 10px;
-    margin: 30px 0px 10px 20px;
+    margin: 23px 0px 10px 20px;
     border-style: ridge;
     border-color:navy;
     border-radius: 20px;
     border-width: 3px;
     background-color: white;
     width: 150px;
-    height:100%; 
+    height:100%;
 }
 
 .row {
@@ -134,7 +139,7 @@ a {
     flex-direction: column;
     word-wrap: break-word;
     padding: 10px;
-    margin: 30px 0px 10px 0px;
+    margin: 23px 0px 0px 0px;
     border-style: ridge;
     border-color:navy;
     border-radius: 20px;
@@ -142,4 +147,25 @@ a {
     background-color: white;
     width: 240px;
     height: 100%;
+}
+
+.hashtags {
+    display: flex;
+    text-align: left;
+    justify-content: top;
+    flex-direction: column;
+    word-wrap: break-word;
+    padding: 10px;
+    margin: 10px 0px 0px 0px;
+    border-style: ridge;
+    border-color:navy;
+    border-radius: 20px;
+    border-width: 3px;
+    background-color: white;
+    width: 240px;
+    height: 100%;
+}
+
+.credit {
+    margin: 40px;
 }

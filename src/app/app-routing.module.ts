@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule,ExtraOptions} from '@angular/router';
-import { LoginComponent } from './components/login/login.component';
+import { AuthButtonComponent } from './components/login/login.component';
 import { PostComponent } from './components/post/post.component';
 import { SinglepostComponent } from './components/singlepost/singlepost.component';
 import {AddpostComponent} from './components/addpost/addpost.component';
-import {LogoutComponent} from '../app/components/logout/logout.component';
+import {  LogoutComponent } from '../app/components/logout/logout.component';
 import {RouteGuardService} from './route-guard.service';
 import {ErrorComponent} from './components/error/error.component';
 import {ResourcesComponent} from './components/resources/resources.component';
@@ -20,6 +20,7 @@ import {TestComponent} from '../app/components/test/test.component';
 import{HashtagComponent} from './components/hashtag/hashtag.component';
 import {HashtagPostComponent} from './components/hashtag-post/hashtag-post.component';
 import {ChatComponent} from '../app/components/chat/chat.component';
+import {AboutComponent} from '../app/components/about/about.component';
 
 const routerOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
@@ -28,8 +29,9 @@ const routerOptions: ExtraOptions = {
 };
 
 const routes: Routes = [
-  {path:"login",component:LoginComponent},
-  {path:"post",component:PostComponent,canActivate:[RouteGuardService]},
+  
+  {path:"login",component:AuthButtonComponent},
+  {path:"post",component:PostComponent},
   {path:"singlepost",component:SinglepostComponent,canActivate:[RouteGuardService]},
   {path:"addpost",component:AddpostComponent,canActivate:[RouteGuardService]},
   {path:"logout",component:LogoutComponent,canActivate:[RouteGuardService]},
@@ -44,10 +46,11 @@ const routes: Routes = [
   {path:"transportation",component:TransportationComponent,canActivate:[RouteGuardService]},
   {path:"test",component:TestComponent,canActivate:[RouteGuardService]},
   {path:"hashtags",component:HashtagComponent,canActivate:[RouteGuardService]},
-  {path:"hashtagpost",component:HashtagPostComponent,canActivate:[RouteGuardService]},
+  {path:"hashtagpost",component:HashtagPostComponent},
   {path:"chat",component:ChatComponent,canActivate:[RouteGuardService]},
+  {path:"about",component:AboutComponent},
 
-  {path: '**', redirectTo:'login'}
+  {path: '**', redirectTo:'post'}
 ];
 
 @NgModule({

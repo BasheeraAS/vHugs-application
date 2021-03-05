@@ -49,8 +49,10 @@ public class Populator implements CommandLineRunner {
       hashtagRepository.save(tag7);
       hashtagRepository.save(tag8);
 
-        Post firstPost = new Post("This bootcamp is hard!","The Bootcamp is really hard! I am struggling to learn TDD",firstReply);
-        Post secondPost = new Post("My Car Brokedown today!","I am not sure how I will get to work without a car! It is so expensive to fix",secondReply);
+        Post firstPost = new Post("This bootcamp is hard!","The Bootcamp is really hard! I am struggling to learn TDD.",firstReply);
+        Post secondPost = new Post("My car broke down today","I am not sure how I will get to work without a car! It is so expensive to fix.",secondReply);
+        
+
 //        firstPost.addHashtag(tag1);
         postRepo.save(firstPost);
         postRepo.save(secondPost);
