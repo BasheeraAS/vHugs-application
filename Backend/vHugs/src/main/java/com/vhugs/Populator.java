@@ -51,7 +51,7 @@ public class Populator implements CommandLineRunner {
 
         Post firstPost = new Post("This bootcamp is hard!","The Bootcamp is really hard! I am struggling to learn TDD.",firstReply);
         Post secondPost = new Post("My car broke down today","I am not sure how I will get to work without a car! It is so expensive to fix.",secondReply);
-        
+
 
 //        firstPost.addHashtag(tag1);
         postRepo.save(firstPost);
