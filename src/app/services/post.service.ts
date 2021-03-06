@@ -28,6 +28,8 @@ export class PostService {
     {word: 'car',link:'transportation'},
     {word: 'bus',link:'transportation'},
     {word: 'class',link:'classRes'},
+    {word: 'law',link:'insecurity'},
+    {word: 'lawyer',link:'insecurity'},
   ]
   
   constructor(private http:HttpClient) { }
